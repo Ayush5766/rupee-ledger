@@ -2,9 +2,6 @@
 
 A smart expense tracker for Indian households. Log spending in ₹, set a monthly budget, get an AI coach, a month-end forecast and plain-English answers about your money. It works fully offline with a local keyword model, and optionally upgrades to an LLM when an OpenAI key is present.
 
-![Screenshot placeholder](docs/screenshot.png)
-<!-- Replace docs/screenshot.png with a screenshot of the running app. -->
-
 ## Features
 
 - Add, edit, delete, filter (category) and search expenses; export any month to CSV
@@ -117,13 +114,6 @@ Errors are JSON: `{"error": "message"}` with status 400 (validation), 404, 405, 
 | GET | `/api/export.csv?month=YYYY-MM` | CSV with plain-number amounts |
 
 Limits: amount ≤ ₹1 crore per expense, budget ≤ ₹10 crore, description ≤ 200 characters, question ≤ 300.
-
-## Resume bullets
-
-- Built a full-stack expense tracker (Flask, SQLite, vanilla JS, Chart.js) with 9 REST endpoints, integer-paise storage for exact money arithmetic and lakh/crore currency formatting.
-- Implemented an offline-first AI layer: a whole-word keyword classifier, rule-based coach with forecast and spending-trend detection, and natural-language Q&A, with an optional OpenAI upgrade that falls back silently on any failure.
-- Wrote 141 automated pytest cases covering validation, edge cases, month boundaries, LLM-outage fallback and CSV export, alongside XSS-safe rendering, CSP headers and CSV formula-injection protection.
-- Designed an accessible, responsive UI (375px to 1440px) with ARIA live regions, keyboard focus states and reduced-motion support.
 
 ## Future improvements
 
